@@ -1,0 +1,26 @@
+[package]
+name = "rust-on-riscv-starter-kit"
+version = "0.1.0"
+edition = "2021"
+authors = ["David de Rosier"]
+description = "Bare-metal hello-world for Rust on RISC-V"
+keywords = ["RISC-V", "bare-metal", "hello-world"]
+categories = ["embedded", "no-std", "hardware-support"]
+repository = "https://github.com/ddrcode/rust-on-riscv-starter-kit"
+license = "MIT"
+
+[profile.dev]
+panic = "abort"
+
+[profile.release]
+codegen-units = 1
+debug = true
+lto = true
+panic = "abort"
+
+[dependencies]
+
+[[bin]]
+name = "hello-riscv"
+path = "src/main.rs"
+
